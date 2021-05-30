@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 @Component
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter
 public class LibraryFetchResponse {
 
     private String bookId;
@@ -22,4 +22,6 @@ public class LibraryFetchResponse {
         this.bookMark = bookMark;
         this.bookNote = bookNote;
     }
+    public LibraryFetchResponse(){};
+
 }
