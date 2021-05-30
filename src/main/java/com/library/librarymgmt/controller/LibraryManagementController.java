@@ -16,15 +16,13 @@ public class LibraryManagementController {
 
     @GetMapping(value = "/fetchAllBook", produces = "application/json")
     public ResponseEntity<?> fetchAllBooks(){
-//        LibraryFetchResponse libraryFetchResponse = new LibraryFetchResponse("1","something","incomplete","34","asldasldkajsd");
         return ResponseEntity.ok(libraryDomain.fetchAllBookDomain());
 
     }
 
     @PostMapping(value = "/bookEntry", consumes = "application/json", produces = "application/json")
-    public LibraryFetchResponse makeBookEntry(@RequestBody LibraryBookEntryRequest libraryBookEntryRequest){
+    public ResponseEntity<?> makeBookEntry(@RequestBody LibraryBookEntryRequest libraryBookEntryRequest){
 
-        LibraryFetchResponse libraryFetchResponse = libraryDomain.makeBookEntryDomain(libraryBookEntryRequest);
-        return libraryFetchResponse;
+        return ResponseEntity.ok(libraryDomain.makeBookEntryDomain(libraryBookEntryRequest));
     }
 }

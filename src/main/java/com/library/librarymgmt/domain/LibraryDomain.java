@@ -15,13 +15,12 @@ public class LibraryDomain {
     @Autowired
     LibraryService libraryService;
 
-    public LibraryFetchResponse makeBookEntryDomain(LibraryBookEntryRequest libraryBookEntryRequest) {
-        LibraryFetchResponse libraryFetchResponse= libraryService.makeBookEntryService(libraryBookEntryRequest);
-        return libraryFetchResponse;
-    }
-
     public List<LibraryBook> fetchAllBookDomain() {
         return libraryService.fetchAllBookService();
+    }
 
+    public LibraryBook makeBookEntryDomain(LibraryBookEntryRequest libraryBookEntryRequest) {
+
+        return libraryService.makeBookEntryService(libraryBookEntryRequest);
     }
 }
