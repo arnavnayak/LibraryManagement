@@ -25,4 +25,20 @@ public class LibraryManagementController {
 
         return ResponseEntity.ok(libraryDomain.makeBookEntryDomain(libraryBookEntryRequest));
     }
+
+    @PutMapping(value = "/bookUpdate/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<?> updateBookEntry(@RequestBody LibraryBookEntryRequest libraryBookEntryRequest
+            ,@PathVariable("id") String bookId){
+        return ResponseEntity.ok(libraryDomain.updateBookEntryDomain(libraryBookEntryRequest,bookId));
+    }
+
+    @GetMapping(value = "/fetchBookById/{id}", produces = "application/json")
+    public ResponseEntity<?> fetchBookById(@PathVariable("id") String bookId){
+        return ResponseEntity.ok(libraryDomain.fetchBookByIdDomain(bookId));
+    }
+
+    @DeleteMapping(value = "/deleteBookEntry/{id}", produces = "application/json")
+    public ResponseEntity<?> deleteBookEntry(@PathVariable("id") String bookId){
+        return ResponseEntity.ok(libraryDomain.deleteBookByIdDomain(bookId));
+    }
 }

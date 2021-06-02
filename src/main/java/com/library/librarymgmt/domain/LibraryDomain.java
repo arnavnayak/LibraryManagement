@@ -23,4 +23,17 @@ public class LibraryDomain {
 
         return libraryService.makeBookEntryService(libraryBookEntryRequest);
     }
+
+    public LibraryBook updateBookEntryDomain(LibraryBookEntryRequest libraryBookEntryRequest,String bookId) {
+
+        return libraryService.updateBookEntryService(libraryBookEntryRequest,bookId);
+    }
+
+    public LibraryBook fetchBookByIdDomain(String bookId) {
+        return libraryService.fetchBookById(bookId);
+    }
+
+    public String deleteBookByIdDomain(String bookId) {
+        return libraryService.deleteBookByIdService(bookId);
+    }
 }

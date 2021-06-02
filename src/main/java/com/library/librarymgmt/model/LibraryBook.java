@@ -14,7 +14,9 @@ import javax.persistence.*;
 @Getter
 public class LibraryBook {
 
+
     @Id
+    @org.springframework.data.annotation.Id
     private String bookId;
     private String bookName;
     private String bookStatus;
